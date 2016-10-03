@@ -15,8 +15,6 @@
     "morgan": "~1.6.1",
     "nodemailer-mailgun-transport": "^1.2.2",
     "pg": "^6.1.0",
-    "serve-favicon": "~2.3.0",
-    "nodemailer": "latest",
-    "modemailer-mailgun-transport": "latest"
+    "serve-favicon": "~2.3.0"
   }
 }
