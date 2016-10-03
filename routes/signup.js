@@ -2,6 +2,10 @@ var express = require('express');
 var nodemailer = require('nodemailer');
 var mg = require('nodemailer-mailgun-transport');
 var dotenv = require('dotenv').load();
+var knex = require('knex')({
+  client: 'pg',
+  connection: process.env.DB_CONNECTION
+});
 var router = express.Router();
 
 router.post('/', function(req, res, next) {
@@ -11,8 +15,15 @@ router.post('/', function(req, res, next) {
   var name = req.body.name
   var email = req.body.email
 
-  if(name || email) {
+  if(name && email) {
     console.log(`name: ${ name  }, email ${email}`)
+
+    knex('followers').insert({
+      username: username,
+      email: email
+    }).then(function(){
+      console.log('added ' + username + " " + email + ' to db');
+    })
 
     var auth = {
       auth: {
@@ -37,7 +48,7 @@ router.post('/', function(req, res, next) {
     });
 
     res.redirect('https://rustek-marketing.firebaseapp.com/');
-    
+
   } else {
     res.redirect('https://rustek-marketing.firebaseapp.com/');
   }
