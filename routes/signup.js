@@ -37,7 +37,7 @@ router.post('/', function(req, res, next) {
     });
 
     res.redirect('https://rustek-marketing.firebaseapp.com/');
-
+    
   } else {
     res.redirect('https://rustek-marketing.firebaseapp.com/');
   }
