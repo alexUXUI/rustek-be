@@ -15,7 +15,6 @@ var app = express();
 
 var knex = require('knex')({
   client: 'pg',
-  // connection: 'postgres://dkkrmpowshaegz:1px7fDlATLW8UH7im7WOlGrWyh@ec2-54-243-203-143.compute-1.amazonaws.com:5432/d7o4uvt2ijj2o1?ssl=true'
   connection: process.env.DB_CONNECTION
 });
 
