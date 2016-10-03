@@ -2,9 +2,10 @@ var express = require('express');
 var nodemailer = require('nodemailer');
 var mg = require('nodemailer-mailgun-transport');
 var dotenv = require('dotenv').load();
+
 var knex = require('knex')({
   client: 'pg',
-  connection: process.env.DB_CONNECTION
+  connection: 'postgres://hvcansxxrxjfxl:Ih2ZZwA5x5Uke1DTvyk2YPi__o@ec2-54-243-60-62.compute-1.amazonaws.com:5432/dd3dlr1mhva919?ssl=true'
 });
 var router = express.Router();
 
