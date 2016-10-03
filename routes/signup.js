@@ -19,7 +19,7 @@ router.post('/', function(req, res, next) {
     console.log(`name: ${ name  }, email ${email}`)
 
     knex('followers').insert({
-      username: username,
+      username: name,
       email: email
     }).then(function(){
       console.log('added ' + username + " " + email + ' to db');
