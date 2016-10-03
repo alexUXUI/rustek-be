@@ -20,10 +20,10 @@ router.post('/', function(req, res, next) {
     console.log(`name: ${ name  }, email ${email}`)
 
     knex('followers').insert({
-      username: this.name,
-      email: this.email
+      username: name,
+      email: email
     }).then(() => {
-      console.log('added ' + this.name + " " + this.email + ' to db');
+      console.log('added ' + name + " " + email + ' to db');
     })
 
     var auth = {
