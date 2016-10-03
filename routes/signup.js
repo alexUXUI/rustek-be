@@ -35,8 +35,11 @@ router.get('/', function(req, res, next) {
       if (err) console.log('Error: ' + err);
       else console.log('Response: ' + info);
     });
+
+    res.redirect('https://rustek-marketing.firebaseapp.com/');
+
   } else {
-    res.render('index', { title: 'Email not sent' });
+    res.redirect('https://rustek-marketing.firebaseapp.com/');
   }
 });
 
