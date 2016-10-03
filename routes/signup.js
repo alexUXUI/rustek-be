@@ -4,7 +4,7 @@ var mg = require('nodemailer-mailgun-transport');
 var dotenv = require('dotenv').load();
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
 
   console.log('hitting route');
 
